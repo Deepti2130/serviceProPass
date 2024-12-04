@@ -1,0 +1,38 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <form #productForm = "ngForm" (ngSubmit)="onAddproduct()">
+      <div class="form-group">
+      <label for="pname">Product Name</label>
+      <input
+      name="pname"
+      #pname="ngModel"
+      type="text"
+      class="form-control"
+      id="pname"
+      ngModel required>
+      <strong class="text-danger"
+      *ngIf="pname.touched && pname.hasError('required')">
+        product name is required field
+      </strong>
+      </div>
+      <div class="form-group">
+        <label for="pdetails">Product Details</label>
+        <input
+        name="pdetails"
+        #pdetails ="ngModel"
+        type="text"
+        class="form-control"
+        id="pdetails"
+        ngModel
+        required>
+        <strong class="text-danger"
+        *ngIf="pdetails.touched && pdetails.hasError('required')">
+          product details is required field
+        </strong>
+      </div>
+      <button
+      type="submit"
+      mat-raised-button color="primary">Add product</button>
+    </form>
+  </div>
+</div>

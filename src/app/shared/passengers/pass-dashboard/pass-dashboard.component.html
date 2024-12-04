@@ -1,0 +1,23 @@
+<h2>Airline Deadlines</h2>
+
+
+<app-pass-count
+[totalcount]="passArr.length"
+[checkIncount]="checkIncount">
+
+</app-pass-count>
+
+<ul class="list-group">
+  <li class="list-group-item"
+  *ngFor="let pass of passArr">
+  {{pass.fullname}}
+</li>
+</ul>
+
+<app-pass-card
+*ngFor="let pass of passArr"
+[passobj]="pass"
+(emitpassInfo)="OnRemoveupdate($event)">
+
+
+</app-pass-card>
